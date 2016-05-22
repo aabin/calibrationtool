@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<opencv_storage>
+<H_matrix type_id="opencv-matrix">
+  <rows>3</rows>
+  <cols>3</cols>
+  <dt>f</dt>
+  <data>
+    500. 0. -96000. 0. 500. -72000. 0. 0. 200.</data></H_matrix>
+</opencv_storage>
