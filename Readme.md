@@ -1,7 +1,6 @@
 # Calibrationtool
 This project calibrates and undistort the videostream of a camera.
 Furthermore, the project can transform the input image of the camera into a bird's-eye view.
-All these algorithms can run in realtime.
 
 ## Camera calibration
 First, a chessboard is detected to compare image points with the real object points.
@@ -17,7 +16,7 @@ After the 50 images, the program calculates the intrinsics and extrinsics parame
 
 ![Chessboard detection with bitwise inverting](examples/chessboard_detection_bitwise.jpg)
 
-Command:
+Commands:
 * **g**: start the chessboard detection
 * **u**: toggle undistort/distort image after successfull calibration
 * **b**: end the program
@@ -36,3 +35,8 @@ The second method provides the functionality to rotate over one axis through a s
 The calibration is executed with the second method and the results looks like this:
 
 ![Bird-Eye's view of the lane](examples/bird_eye_view.jpg)
+
+Commands:
+* **c**: start the chessboard detection
+* **m**: start the manual detection
+* **b**: end the calibration
