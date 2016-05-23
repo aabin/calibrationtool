@@ -149,6 +149,7 @@ bool Bird_eye::chessboard_H_calibration()
 		key = (char)waitKey(20);
 	}
 	destroyAllWindows();
+	
 	if (!found_chess)
 	{
 		cout << "No chessboard found -> No H_calibration.xml" << endl;
@@ -260,6 +261,7 @@ bool Bird_eye::manual_H_calibration()
 		m_H = A2 * (T * (R * A1));
 
 		// Apply matrix transformation
+		source=imread("testbild2.jpg");
 		warpPerspective(source, destination, m_H, taille, WARP_INVERSE_MAP);
 
 		//Output text
@@ -318,7 +320,7 @@ void Bird_eye::go(Mat &input_output)
 	}
 
 	//Transformation
-	m_input = input_output;
+	/*m_input = input_output;
 	Transformation(m_input, m_output);
-	input_output = m_output;
+	input_output = m_output;*/
 }

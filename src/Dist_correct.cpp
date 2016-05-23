@@ -37,7 +37,7 @@ Dist_correct::Dist_correct(){
 	}
 	m_undistorted_delay = 25;	//default value
 	m_goodInput = false;
-	m_inputSettingsFile = "calibration/settings_" + camera_model + ".xml";
+	m_inputSettingsFile = "settings/settings_" + camera_model + ".xml";
 	m_mode = m_inputType == Dist_correct::IMAGE_LIST ? CAPTURING : DETECTION;
 	m_prevTimestamp = 0;
 	m_blinkOutput = false;
@@ -230,7 +230,7 @@ int Dist_correct::readCameraParams()
 	}
 	if (m_readin_set = 1)
 	{
-		FileStorage fs_calibrated("calibration/camera_calibration_" + camera_model + ".xml", FileStorage::READ);
+		FileStorage fs_calibrated("settings/camera_calibration_" + camera_model + ".xml", FileStorage::READ);
 		if (!fs_calibrated.isOpened())
 		{
 			cout << "Could not open the configuration file: \"" << m_inputSettingsFile << "\"" << endl;
@@ -359,6 +359,7 @@ bool Dist_correct::camera_calibration()
 
 			// Draw the corners.
 			drawChessboardCorners(m_view, m_boardSize, Mat(pointBuf), found);
+			
 		}
 
 		//----------------------------- Output Text ------------------------------------------------
@@ -378,8 +379,10 @@ bool Dist_correct::camera_calibration()
 
 		putText(m_view, msg, textOrigin, 1, 1, m_mode == CALIBRATED ? GREEN : RED);
 
-		if (m_blinkOutput)
+		if (m_blinkOutput){
 			bitwise_not(m_view, m_view);
+		}
+			
 
 		//------------------------- Video capture  output  undistorted ------------------------------
 		if (m_mode == CALIBRATED && m_showUndistorsed)
