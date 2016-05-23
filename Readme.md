@@ -1,9 +1,9 @@
-# calibrationtool
+# Calibrationtool
 This project calibrates and undistort the videostream of a camera.
 Furthermore, the project can transform the input image of the camera into a bird's-eye view.
 All these algorithms can run in realtime.
 
-##Camera calibration
+## Camera calibration
 First, a chessboard is detected to compare image points with the real object points.
 The settings for this calibration are saved in the folder /settings.
 
@@ -18,15 +18,15 @@ After the 50 images, the program calculates the intrinsics and extrinsics parame
 ![Chessboard detection with bitwise inverting](examples/chessboard_detection_bitwise.jpg)
 
 Command:
--g: start the chessboard detection
--u: toggle undistort/distort image after successfull calibration
--b: end the program
+* **g**: start the chessboard detection
+* **u**: toggle undistort/distort image after successfull calibration
+* **b**: end the program
 
 ## Bird-Eye's view calibration
 The previous step (and the results/calibration_data.xml) is required to generate a H Matrix.
 There are two methods to determine the H Matrix:
-* Chessboard calibration
-* Manual calibration
+* **Chessboard** calibration
+* **Manual** calibration
 
 The first method uses algorithms to detect a chessboard in a difficult situation to detect (askew).
 The second method provides the functionality to rotate over one axis through a slider.
