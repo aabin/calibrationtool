@@ -31,7 +31,7 @@ There are two methods to determine the H Matrix:
 The first method uses algorithms to detect a chessboard in a difficult situation to detect (askew).
 The second method provides the functionality to rotate over one axis through a slider.
 
-![Input image of a lane](examples/input_image.jpg)
+![Input image of a lane](examples/input_image.JPG)
 
 The calibration is executed with the second method and the results looks like this:
 
